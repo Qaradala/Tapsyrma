@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Ноутбук тауары</h1>_____________
+    </header>
+    <main>
+        <section id="products">
+            <div class="product">
+                <img src="/qwerty/images.jpg/qwer1.jpeg" alt="Ноутбук">
+                <h3>Ноутбук<h4>512Гб</h4></h3>
+                <p>499 990тг</p>
+                <button class="add-to-cart">Себетке салу</button>
+            </div>
+            <div class="product"><hr>
+                <img src="/qwerty/images.jpg/qwer6.jpeg" alt="Ноутбук">
+                <h3>Ноутбук <h4>1Тб</h4></h3>
+                <p>595 990тг</p>
+                <button class="add-to-cart">Себетке салу</button>
+            </div>
+            <div class="product">
+                <img src="/qwerty/images.jpg/qwer2.jpeg" alt="Ноутбук">
+                <h3>Ноутбук <h4>1Тб</h4></h3>
+                <p>955 990тг</p>
+                <button class="add-to-cart">Себетке салу</button>
+            </div>
+            <div class="product">
+                <img src="/qwerty/images.jpg/qwer3.jpeg" alt="Ноутбук">
+                <h3>Ноутбук <h4>512Гб</h4></h3>
+                <p>535 990тг</p>
+                <button class="add-to-cart">Себетке салу</button>
+            </div>
+            <div class="product">
+                <img src="/qwerty/images.jpg/qwer4.jpeg" alt="Ноутбук">
+                <h3>Ноутбук <h4>512Гб</h4></h3>
+                <p>450 990тг</p>
+                <button class="add-to-cart">Себетке салу</button>
+            </div>
+            <div class="product">
+                <img src="/qwerty/images.jpg/qwer5.jpeg" alt="Ноутбук ">
+                <h3>Ноутбук <h4>128Гб</h4></h3>
+                <p>255 990тг</p>
+                <button class="add-to-cart">Себетке салу</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="cart">
+            <h2>Себет</h2>
+            <ul id="cart-items">
+                <!-- Бұл жер тек динамикалық контент үшін орын, кейін JavaScript арқылы жаңартылады -->
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Себетке салу логикасы
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const cartItemsList = document.getElementById('cart-items');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const product = button.parentElement;
+                const productName = product.querySelector('h3').textContent;
+                const productPrice = product.querySelector('p').textContent;
+
+                // Себетке қосу
+                const listItem = document.createElement('li');
+                listItem.textContent = `${productName} - ${productPrice}`;
+                cartItemsList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>
